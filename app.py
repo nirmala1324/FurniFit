@@ -8,7 +8,7 @@ app = Flask (__name__, static_folder='frontend/build', static_url_path='')
 cors = CORS(app)
 
 @app.route('/api', methods=['GET'])
-@cross_origin # so there is no CORS 4G request error when react communicate with the Flask Server 
+@cross_origin() # so there is no CORS 4G request error when react communicate with the Flask Server 
 def index():
     return {
         "flask": "This is the flask server ^^"
@@ -16,7 +16,7 @@ def index():
     
 # return index.html from the build folder inside react app
 @app.route('/')
-@cross_origin
+@cross_origin()
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
 

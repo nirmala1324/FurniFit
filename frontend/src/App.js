@@ -1,4 +1,3 @@
-import './App.css';
 import { useState, useEffect } from 'react';
 import { Deploy } from './Component/Deploy/Deploy';
 
